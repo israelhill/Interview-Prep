@@ -45,10 +45,26 @@ public class BinarySearch {
     return -1;
   }
 
+  //a cool way to reverse a string
+  public String reverseString(String s) {
+    int length = s.length();
+    int last = length - 1;
+    char[] chars = s.toCharArray();
+    for(int i = 0; i < length / 2; i++) {
+      //swap front and back characters
+      char c = chars[i];
+      chars[i] = chars[last - i];
+      chars[last - i] = c;
+    }
+    return new String(chars);
+  }
+
   public static void main(String[] args) {
       BinarySearch bs = new BinarySearch();
       int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 23, 34, 37, 46, 58, 69, 70, 71, 77, 79, 81, 83, 84};
       int key = 34;
+      String s = "Reverse Me";
       System.out.println("Key is at index: " + bs.iterativeBinarySearch(array, key, 0, array.length - 1));
+      System.out.println("Reversed string: " + bs.reverseString(s));
   }
 }
