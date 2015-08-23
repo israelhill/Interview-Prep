@@ -59,6 +59,11 @@ public class BinarySearch {
     return new String(chars);
   }
 
+  //return the nth fibonacci number, one line of code!
+  public int fib(int n) {
+    return n <= 1 ? n : fib(n - 1) + fib(n - 2);
+  }
+
   public static void main(String[] args) {
       BinarySearch bs = new BinarySearch();
       int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 23, 34, 37, 46, 58, 69, 70, 71, 77, 79, 81, 83, 84};
@@ -66,5 +71,6 @@ public class BinarySearch {
       String s = "Reverse Me";
       System.out.println("Key is at index: " + bs.iterativeBinarySearch(array, key, 0, array.length - 1));
       System.out.println("Reversed string: " + bs.reverseString(s));
+      System.out.println("Fibanocci: " + bs.fib(7));
   }
 }
