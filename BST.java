@@ -1,3 +1,7 @@
+//Pre-Order:  Root, Left, Right
+//Post-Order: Left, Right, Root
+//in-order:   Left, Root, Right
+
 public class BST {
 
   //***************************
@@ -32,10 +36,32 @@ public class BST {
     return root;
   }
 
+  public void preOrderTrav(TreeNode node) {
+    if(node == null) {
+      return;
+    }
+    else {
+      System.out.print(node.value + ", ");
+      preOrderTrav(node.leftChild);
+      preOrderTrav(node.rightChild);
+    }
+  }
+
+  public static void inOrderTrav(TreeNode node) {
+    if(node == null) {
+      return;
+    }
+    else {
+      inOrderTrav(node.leftChild);
+      System.out.print(node.value + ", ");
+      inOrderTrav(node.rightChild);
+    }
+  }
+
   public static void main(String[] args) {
     BST bst = new BST();
     int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 15, 16, 20};
-    bst.sortedArrayToBST(arr);
-
+    TreeNode root = bst.sortedArrayToBST(arr);
+    inOrderTrav(root);
   }
 }
