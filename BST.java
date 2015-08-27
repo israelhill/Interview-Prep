@@ -40,22 +40,20 @@ public class BST {
     if(node == null) {
       return;
     }
-    else {
-      System.out.print(node.value + ", ");
-      preOrderTrav(node.leftChild);
-      preOrderTrav(node.rightChild);
-    }
+
+    System.out.print(node.value + ", ");
+    preOrderTrav(node.leftChild);
+    preOrderTrav(node.rightChild);
   }
 
   public static void inOrderTrav(TreeNode node) {
     if(node == null) {
       return;
     }
-    else {
-      inOrderTrav(node.leftChild);
-      System.out.print(node.value + ", ");
-      inOrderTrav(node.rightChild);
-    }
+
+    inOrderTrav(node.leftChild);
+    System.out.print(node.value + ", ");
+    inOrderTrav(node.rightChild);
   }
 
   public static void main(String[] args) {
