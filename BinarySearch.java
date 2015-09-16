@@ -60,8 +60,26 @@ public class BinarySearch {
   }
 
   //return the nth fibonacci number, one line of code!
+  //naive approach: O(2^n)
   public int fib(int n) {
     return n <= 1 ? n : fib(n - 1) + fib(n - 2);
+  }
+
+  //Fib using caching, must faster
+  //O(n)
+  public int fibonacci(int i) {
+    return fibonacci(i, new int[i + 1]);
+  }
+
+  public int fibonacci(int i, int[] cache) {
+    if(i == 0) return 0;
+    if(i == 1) return 1;
+
+    if(cache[i] == 0) {
+      cache[i] = fibonacci(i - 1, cache) + fibonacci(i - 2, cache);
+    }
+
+    return cache[i];
   }
 
   public static void main(String[] args) {
@@ -71,6 +89,6 @@ public class BinarySearch {
       String s = "Reverse Me";
       System.out.println("Key is at index: " + bs.iterativeBinarySearch(array, key, 0, array.length - 1));
       System.out.println("Reversed string: " + bs.reverseString(s));
-      System.out.println("Fibanocci: " + bs.fib(7));
+      System.out.println("Fibanocci: " + bs.fibonacci(7));
   }
 }
