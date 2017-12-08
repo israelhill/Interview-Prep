@@ -21,7 +21,7 @@ function initLookupTable() {
     }
     // initialize lookup table last index to be 1
     // (this is the tile we wish to reach)
-    lookupTable[row-1][col-1] = 1;
+    lookupTable[row - 1][col - 1] = 1;
 }
 
 function countPathsFromNeighbors(currentRow, currentCol) {
