@@ -36,7 +36,7 @@ class LongestPalindromeSubstringDP {
                 }
             }
         }
-        return String.valueOf(s.substring(startsAt, len+1));
+        return String.valueOf(s.substring(startsAt, startsAt + len));
     }
 
     public boolean[][] initTable(String s) {
